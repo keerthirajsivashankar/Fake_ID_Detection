@@ -215,6 +215,41 @@ body {
     border:1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
+.ubtn1{
+  height: 60px;
+  width: 220px;
+  border-radius: 35px;
+  border: 0px solid ;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: aliceblue;
+  border:1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+.ubtn1:hover{
+    color: black;
+    background-color: aliceblue;
+    transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transform: scale(1.1);
+}
+.ubtn2{
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+  font-size: xx-large;
+}
+.ubtn2:hover{
+  color: #111;
+  transform: scale(1.1);
+}
 .ubtn:hover {
     color: black;
     background-color: aliceblue;

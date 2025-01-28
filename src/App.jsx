@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Logo from "./icon.png";
 import Image from "./Image.png";
+import upload from "./upload";
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -41,6 +42,7 @@ const Header = () => (
 );
 
 const LandingPage = () => (
+  
   <motion.div
     className="p-4"
     initial="initial"
@@ -51,7 +53,7 @@ const LandingPage = () => (
   >
     <div className="home-page">
       <div className="Upload">
-        <button className="ubtn"><h1>Upload File</h1></button>
+        <h3 className='ubtn1'><Link to="/upload" className='ubtn2'>Upload</Link></h3>
         <br />
         <h3>Or drop a file</h3>
         <br />
