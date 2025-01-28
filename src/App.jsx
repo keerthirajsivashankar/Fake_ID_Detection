@@ -32,7 +32,7 @@ const Header = () => (
         <li><h3><Link to="/">Home</Link></h3></li>
         <li><h3><Link to="/upload" className="hover:underline">Upload CSV</Link></h3></li>
         <li><h3><Link to="/profile" className="hover:underline">Profile</Link></h3></li>
-        <li><h3></h3></li>
+        <li><h3>Report</h3></li>
       </ul>
       <button className="buttonh"><h3>Sign Up/Login</h3></button>
     </nav>
