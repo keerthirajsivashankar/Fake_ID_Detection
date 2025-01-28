@@ -179,9 +179,13 @@ body {
 }
 
 .Image{
-    height: 400px;
-    width: 400px;
+    height: 250px;
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .Upload{
     height: 400px;
     width: 400px;

@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Logo from "./icon.png"
+import Logo from "./icon.png";
+import Image from "./Image.png";
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -56,7 +57,7 @@ const LandingPage = () => (
         <br />
       </div>
       <div className="Image">
-
+        <img src={Image} alt="Logo" className="Image"  />
       </div>
     </div>
   </motion.div>
