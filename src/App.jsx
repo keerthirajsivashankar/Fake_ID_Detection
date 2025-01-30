@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Logo from "./icon.png";
 import Image from "./Image.png";
-import upload from "./upload";
+import Profile from "./profile.jpg";
+import Papa from "papaparse"; 
+import Upload from "./upload";
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -44,12 +46,12 @@ const Header = () => (
 const LandingPage = () => (
   
   <motion.div
-    className="p-4"
-    initial="initial"
-    animate="in"
-    exit="out"
-    variants={pageVariants}
-    transition={pageTransition}
+  className="p-4"
+  initial="initial"
+  animate="in"
+  exit="out"
+  variants={pageVariants}
+  transition={pageTransition}
   >
     <div className="home-page">
       <div className="Upload">
@@ -149,8 +151,15 @@ const ProfilePage = () => (
     variants={pageVariants}
     transition={pageTransition}
   >
-    <h1 className="text-3xl font-bold">Profile Page</h1>
-    <p className="mt-2">This is where user details will be displayed.</p>
+    <div className="profile-page">
+      <div className="profile1">
+        <h2>User Profile</h2>
+        <img className="profilephoto" src={Profile} alt="" />
+        <h2>Name : Keerthi Raj S</h2>
+        <h2>Gender : Male</h2>
+        <h2>D.O.B : 14/4/2004</h2>
+      </div>
+    </div>
   </motion.div>
 );
 
@@ -159,7 +168,7 @@ const App = () => (
     <Header />
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/upload" element={<UploadPage />} />
+      <Route path="/upload" element={<Upload />} />
       <Route path="/profile" element={<ProfilePage />} />
     </Routes>
     <Footer />
