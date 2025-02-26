@@ -1,85 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Logo from "./icon.png";
-import Image from "./Image.png";
-import Profile from "./profile.jpg";
-import Papa from "papaparse"; 
 import Upload from "./upload";
-const pageVariants = {
-  initial: {
-    opacity: 0,
-    x: '100vw',
-  },
-  in: {
-    opacity: 1,
-    x: 0,
-  },
-  out: {
-    opacity: 0,
-    x: '-100vw',
-  },
-};
-
-const pageTransition = {
-  type: 'tween',
-  ease: 'easeInOut',
-  duration: 0.8,
-};
+import Upload2 from "./upload2";
+import Upload1 from "./upload1";
 
 const Header = () => (
   <header className="header">
     <nav className="nav">
-    <img src={Logo} alt="Logo" className="Logo" />
-    <h1 className="controls">Fake ID Detector</h1>
+      <img src={Logo} alt="Logo" className="Logo" />
+      <h1 className="controls">Fake ID Detector</h1>
       <ul>
-        <li><h3><Link to="/">Home</Link></h3></li>
-        <li><h3><Link to="/upload" className="hover:underline">Upload CSV</Link></h3></li>
-        <li><h3><Link to="/profile" className="hover:underline">Profile</Link></h3></li>
-        <li><h3>Report</h3></li>
+        <li><Link to="/">Instagram</Link></li>
+        <li><Link to="/twitter">X (Twitter)</Link></li>
+        <li><Link to="/linkedin">LinkedIn</Link></li>
       </ul>
-      <button className="buttonh"><h3>Sign Up/Login</h3></button>
+      <button className="buttonh" onClick={() => alert("Enter ID details in the form to check for authenticity.")}>
+        How It Works?
+      </button>
     </nav>
   </header>
 );
 
-const LandingPage = () => (
-  
-  <motion.div
-  className="p-4"
-  initial="initial"
-  animate="in"
-  exit="out"
-  variants={pageVariants}
-  transition={pageTransition}
-  >
-    <div className="home-page">
-      <div className="Upload">
-        <h3 className='ubtn1'><Link to="/upload" className='ubtn2'>Upload</Link></h3>
-        <br />
-        <h3>Or drop a file</h3>
-        <br />
-      </div>
-      <div className="Image">
-        <img src={Image} alt="Logo" className="Image"  />
-      </div>
-    </div>
-  </motion.div>
-);
-
-const UploadPage = () => (
-  <motion.div
-    className="p-4"
-    initial="initial"
-    animate="in"
-    exit="out"
-    variants={pageVariants}
-    transition={pageTransition}
-  >
-    <h1 className="text-3xl font-bold">Upload Your CSV File</h1>
-    <input type="file" className="mt-4 border border-gray-300 p-2" />
-  </motion.div>
-);
 const Footer = () => {
   return (
     <footer className="footer">
@@ -88,7 +30,7 @@ const Footer = () => {
         <div className="footer-section brand">
           <h2>Fake ID Detection</h2>
           <div className="social-icons">
-            <a href="#"><i className="fa fa-facebook"></i></a>
+          <a href="#"><i className="fa fa-facebook"></i></a>
             <a href="#"><i className="fa fa-twitter"></i></a>
             <a href="#"><i className="fa fa-instagram"></i></a>
             <a href="#"><i className="fa fa-tumblr"></i></a>
@@ -113,8 +55,8 @@ const Footer = () => {
           <ul>
             <li><a href="#">Docs</a></li>
             <li><a href="#">Anomaly Detection</a></li>
-            <li><a href="#">Fraudulant Management</a></li>
-            <li><a href="#">Network Traffic Avoider</a></li>
+            <li><a href="#">Fraudulent Management</a></li>
+            <li><a href="#">Network Traffic Analysis</a></li>
           </ul>
         </div>
 
@@ -132,44 +74,24 @@ const Footer = () => {
         <div className="footer-section additional-info">
           <h3>ADDITIONAL INFO</h3>
           <p>
-            We are here to help you to find the anamoly in your csv data using one of the most cuttign edge technology call isolation forest algorithm . Make sure you uplad a .CSV file
+            Our system helps detect fake social media accounts by analyzing user activity and profile details. Fill out the form with the required attributes to verify authenticity.
           </p>
         </div>
       </div>
       <div className="footer-bottom">
-        Lorem ipsum dolor sit amet - All Rights Reserved
+        © 2025 Fake ID Detector - All Rights Reserved
       </div>
     </footer>
   );
 };
-const ProfilePage = () => (
-  <motion.div
-    className="p-4"
-    initial="initial"
-    animate="in"
-    exit="out"
-    variants={pageVariants}
-    transition={pageTransition}
-  >
-    <div className="profile-page">
-      <div className="profile1">
-        <h2>User Profile</h2>
-        <img className="profilephoto" src={Profile} alt="" />
-        <h2>Name : Keerthi Raj S</h2>
-        <h2>Gender : Male</h2>
-        <h2>D.O.B : 14/4/2004</h2>
-      </div>
-    </div>
-  </motion.div>
-);
 
 const App = () => (
   <Router>
     <Header />
     <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/upload" element={<Upload />} />
-      <Route path="/profile" element={<ProfilePage />} />
+      <Route path="/" element={<Upload />} />
+      <Route path="/twitter" element={<Upload1 />} />
+      <Route path="/linkedin" element={<Upload2 />} />
     </Routes>
     <Footer />
   </Router>
