@@ -2,9 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Logo from "./icon.png";
 import Upload from "./upload";
-import Upload2 from "./upload2";
 import Upload1 from "./upload1";
-
+import Upload2 from "./upload2";
 const Header = () => (
   <header className="header">
     <nav className="nav">

@@ -1,0 +1,62 @@
+.twitter-form {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: black; /* Twitter Blue */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-align: center;
+  }
+  
+  .form-title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  
+  .form-input,
+  .form-select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .form-input {
+    background: white;
+    color: black;
+  }
+  
+  .form-select {
+    background: white;
+  }
+  
+  .form-button1 {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background: grey; /* Darker Blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .form-button1:hover {
+    background: grey;
+  }
+  
