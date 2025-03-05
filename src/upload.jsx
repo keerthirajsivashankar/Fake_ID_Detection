@@ -14,6 +14,8 @@ const InstagramForm = ({ onSubmit }) => {
     numFollows: "",
   });
 
+  const [result, setResult] = useState(null); // State to store the result
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -35,34 +37,45 @@ const InstagramForm = ({ onSubmit }) => {
       nameEqualsUsername,
     };
 
-    onSubmit(processedData);
+    const prediction = onSubmit(processedData); // Call parent function for prediction
+    setResult(prediction); // Update result
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
-      <h2>Instagram Fake Account Detection</h2>
-      <div className="form-grid">
-        <input type="text" name="username" placeholder="Username" onChange={handleChange} required />
-        <input type="text" name="fullname" placeholder="Full Name" onChange={handleChange} required />
-        <select name="profilePic" onChange={handleChange}>
-          <option value="1">Has Profile Picture</option>
-          <option value="0">No Profile Picture</option>
-        </select>
-        <input type="number" name="descriptionLength" placeholder="Bio Length" onChange={handleChange} required />
-        <select name="externalURL" onChange={handleChange}>
-          <option value="0">No External URL</option>
-          <option value="1">Has External URL</option>
-        </select>
-        <select name="private" onChange={handleChange}>
-          <option value="0">Public Account</option>
-          <option value="1">Private Account</option>
-        </select>
-        <input type="number" name="numPosts" placeholder="Number of Posts" onChange={handleChange} required />
-        <input type="number" name="numFollowers" placeholder="Followers" onChange={handleChange} required />
-        <input type="number" name="numFollows" placeholder="Following" onChange={handleChange} required />
-      </div>
-      <button type="submit">Check Fake ID</button>
-    </form>
+    <div className="form-container">
+      <form onSubmit={handleSubmit} className="instagram-form">
+        <h2>Instagram Fake Account Detection</h2>
+        <div className="form-grid">
+          <input type="text" name="username" placeholder="Username" onChange={handleChange} required />
+          <input type="text" name="fullname" placeholder="Full Name" onChange={handleChange} required />
+          <select name="profilePic" onChange={handleChange}>
+            <option value="1">Has Profile Picture</option>
+            <option value="0">No Profile Picture</option>
+          </select>
+          <input type="number" name="descriptionLength" placeholder="Bio Length" onChange={handleChange} required />
+          <select name="externalURL" onChange={handleChange}>
+            <option value="0">No External URL</option>
+            <option value="1">Has External URL</option>
+          </select>
+          <select name="private" onChange={handleChange}>
+            <option value="0">Public Account</option>
+            <option value="1">Private Account</option>
+          </select>
+          <input type="number" name="numPosts" placeholder="Number of Posts" onChange={handleChange} required />
+          <input type="number" name="numFollowers" placeholder="Followers" onChange={handleChange} required />
+          <input type="number" name="numFollows" placeholder="Following" onChange={handleChange} required />
+        </div>
+        <button type="submit">Check Fake ID</button>
+      </form>
+
+      {/* Result Box */}
+      {result !== null && (
+        <div className={`result-box ${result === "FAKE" ? "fake" : "real"}`}>
+          <h3>Prediction Result:</h3>
+          <p>{result === "FAKE" ? "🚨 This account is likely FAKE!" : "✅ This account seems REAL!"}</p>
+        </div>
+      )}
+    </div>
   );
 };
 
