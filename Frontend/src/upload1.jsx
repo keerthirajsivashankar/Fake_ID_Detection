@@ -26,7 +26,7 @@ const TwitterForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="form-container">
+    <div className="form-container1">
       <form onSubmit={handleSubmit} className="twitter-form">
         <h2 className="form-title">X (Twitter) Fake Account Detection</h2>
         <div className="form-grid">
