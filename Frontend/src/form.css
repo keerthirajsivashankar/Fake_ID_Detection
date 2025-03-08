@@ -8,32 +8,39 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   text-align: center;
   font-family: "Poppins", sans-serif;
-  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Form Title */
 h2 {
   color: #fff;
   margin-bottom: 20px;
   font-size: 22px;
 }
 
+/* Two-column Grid */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
+  width: 100%;
   margin-bottom: 15px;
 }
 
+/* Input & Select Fields */
 input, select {
-  width: 100%;
-  padding: 10px;
+  width: 96%;
+  padding: 12px;
   border: none;
   border-radius: 8px;
   font-size: 14px;
   background: #fff;
   outline: none;
   transition: 0.3s;
-  height: 50px;
+  height: 45px;
+  margin: 5px;
 }
 
 input:focus, select:focus {
@@ -41,6 +48,7 @@ input:focus, select:focus {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+/* Button */
 button {
   width: 100%;
   padding: 12px;
@@ -52,6 +60,7 @@ button {
   cursor: pointer;
   transition: 0.3s;
   height: 50px;
+  margin-top: 10px;
 }
 
 button:hover {
@@ -59,27 +68,15 @@ button:hover {
   transform: translateY(-3px);
 }
 
-@media (max-width: 500px) {
-  .form-container {
-    width: 90%;
-    padding: 20px;
-  }
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.form-container {
-  text-align: center;
-  max-width: 500px;
-  margin: auto;
-}
-
+/* Prediction Result Box */
 .result-box {
   margin-top: 20px;
   padding: 15px;
   border-radius: 8px;
   font-weight: bold;
   font-size: 18px;
+  text-align: center;
+  width: 100%;
 }
 
 .result-box.fake {
@@ -92,4 +89,15 @@ button:hover {
   background-color: #ccffcc;
   color: #008000;
   border: 2px solid #008000;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .form-container {
+    width: 90%;
+    padding: 20px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
 }

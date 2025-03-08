@@ -1,5 +1,4 @@
-// src/services/api.js
-const BASE_URL = "http://localhost:5173"; // Change if backend is deployed
+const BASE_URL = "http://localhost:5000"; // Flask backend URL
 
 export const predictInstagram = async (data) => {
   try {
@@ -8,25 +7,16 @@ export const predictInstagram = async (data) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch prediction");
+    }
+
     const result = await response.json();
-    return result.prediction;
+    console.log("API Response:", result); // Debugging
+    return result.prediction; // Should return "FAKE" or "REAL"
   } catch (error) {
     console.error("Error predicting Instagram fake ID:", error);
-    return null;
-  }
-};
-
-export const predictTwitter = async (data) => {
-  try {
-    const response = await fetch(`${BASE_URL}/predict/twitter`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    const result = await response.json();
-    return result.prediction;
-  } catch (error) {
-    console.error("Error predicting Twitter fake ID:", error);
-    return null;
+    return "Error"; // Return error message to frontend
   }
 };

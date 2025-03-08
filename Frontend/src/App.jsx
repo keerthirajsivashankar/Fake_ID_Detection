@@ -24,11 +24,7 @@ const Header = () => (
 );
 
 const Footer = () => {
-  return (
-    <footer className="footer-bottom">
-        © 2025 Fake ID Detector - All Rights Reserved
-    </footer>
-  );
+  
 };
 
 const App = () => (
