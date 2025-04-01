@@ -92,7 +92,7 @@ const Upload = () => {
       {result !== null && (
         <div className={`result-box ${result === "FAKE" ? "fake" : "real"}`}>
           <h3>Prediction Result:</h3>
-          <p>{result === "FAKE" ? "🚨 This account is likely FAKE!" : "✅ This account seems REAL!"}</p>
+          <p>{result === "FAKE" ? "🚨 This account is FAKE!" : "✅ This account is REAL!"}</p>
         </div>
       )}
     </div>
