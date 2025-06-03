@@ -10,24 +10,24 @@ This project focuses on detecting fake social media accounts using machine learn
 
 ## 🚀 Features
 
-* **🧠 ML Model**: Utilizes a Random Forest Classifier for robust prediction.
-* **📊 Feature Scaling**: Employs `StandardScaler` for effective data preprocessing.
-* **📁 CSV Dataset Processing**: Handles and processes `.csv` datasets efficiently.
-* **🌐 User-Friendly Frontend**: Built with HTML, CSS (Gradient UI), and JavaScript for an intuitive experience.
-* **🔍 Real-time Prediction**: Provides immediate predictions with a clear visual result box.
-* **📈 Accuracy Visualization**: Displays model accuracy over training data for performance insights.
-* **💾 Model Persistence**: `joblib` is used to save and load the trained model and scaler.
+- **🧠 ML Model**: Utilizes a Random Forest Classifier for robust prediction.
+- **📊 Feature Scaling**: Employs `StandardScaler` for effective data preprocessing.
+- **📁 CSV Dataset Processing**: Handles and processes `.csv` datasets efficiently.
+- **🌐 User-Friendly Frontend**: Built with HTML, CSS (Gradient UI), and JavaScript for an intuitive experience.
+- **🔍 Real-time Prediction**: Provides immediate predictions with a clear visual result box.
+- **📈 Accuracy Visualization**: Displays model accuracy over training data for performance insights.
+- **💾 Model Persistence**: `joblib` is used to save and load the trained model and scaler.
 
 ---
 
 ## 🧪 Tech Stack
 
-| Layer          | Tools Used                                   |
-| :------------- | :------------------------------------------- |
-| ML Backend     | Python, Pandas, Scikit-Learn, Joblib         |
-| Frontend UI    | HTML, CSS (Gradient UI), JS                  |
-| Data           | CSV dataset with user metrics                |
-| Visualization  | Matplotlib, Accuracy Graphs                  |
+| Layer         | Tools Used                           |
+| :------------ | :----------------------------------- |
+| ML Backend    | Python, Pandas, Scikit-Learn, Joblib |
+| Frontend UI   | HTML, CSS (Gradient UI), JS          |
+| Data          | CSV dataset with user metrics        |
+| Visualization | Matplotlib, Accuracy Graphs          |
 
 ---
 
@@ -35,17 +35,17 @@ This project focuses on detecting fake social media accounts using machine learn
 
 The following features are used to train the model:
 
-* `profile pic`
-* `nums/length username`
-* `fullname words`
-* `nums/length fullname`
-* `name==username`
-* `description length`
-* `external URL`
-* `private`
-* `#posts`
-* `#followers`
-* `#follows`
+- `profile pic`
+- `nums/length username`
+- `fullname words`
+- `nums/length fullname`
+- `name==username`
+- `description length`
+- `external URL`
+- `private`
+- `#posts`
+- `#followers`
+- `#follows`
 
 **Target**: `fake` (`0` = real, `1` = fake)
 
@@ -54,18 +54,18 @@ The following features are used to train the model:
 ## ⚙️ How It Works
 
 1.  **Preprocess Data**:
-    * Load CSV dataset.
-    * Apply `StandardScaler` for normalization.
-    * Split data into training and testing sets.
+    - Load CSV dataset.
+    - Apply `StandardScaler` for normalization.
+    - Split data into training and testing sets.
 2.  **Train Model**:
-    * Utilize `RandomForestClassifier`.
-    * Evaluate model accuracy and save the trained model.
+    - Utilize `RandomForestClassifier`.
+    - Evaluate model accuracy and save the trained model.
 3.  **Build UI**:
-    * Collect user input through the web interface.
-    * Format input into features suitable for the model.
-    * Load the saved model using `joblib` and generate a prediction.
+    - Collect user input through the web interface.
+    - Format input into features suitable for the model.
+    - Load the saved model using `joblib` and generate a prediction.
 4.  **Display Prediction**:
-    * Show the result as **REAL** or **FAKE** with appropriate styling.
+    - Show the result as **REAL** or **FAKE** with appropriate styling.
 
 ---
 
@@ -76,3 +76,17 @@ A graph is included to show how model accuracy improves with the amount of train
 ---
 
 ## 📂 Folder Structure
+
+├── data/
+│ └── mydata.csv
+├── models/
+│ ├── random_forest_model.pkl
+│ └── scaler.pkl
+├── static/
+│ └── form.css
+├── templates/
+│ └── index.html
+├── app.py
+├── predict.py
+├── accuracy_plot.py
+└── README.md
